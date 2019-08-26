@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import styles from "./statement.module.scss";
 
 interface StatementProps {
+    id: number;
     text: string;
 }
 

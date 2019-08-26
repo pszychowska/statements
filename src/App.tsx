@@ -5,7 +5,7 @@ import styles from "./app.module.scss";
 const App: FC = () => {
     return (
         <div className={styles.app}>
-            <Statement text="przykładowy komunikat - ilość znaków maksymalnie 100" />
+            <Statement text="przykładowy komunikat - ilość znaków maksymalnie 100" id={1} />
         </div>
     );
 };
