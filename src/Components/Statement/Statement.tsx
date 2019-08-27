@@ -1,4 +1,5 @@
 import React, { FC } from "react";
+import styles from "./statement.module.scss";
 
 interface StatementProps {
     text: string;
@@ -6,7 +7,7 @@ interface StatementProps {
 
 const Statement: FC<StatementProps> = (props: StatementProps) => {
     return (
-        <div>
+        <div className={styles.statement}>
             <p> {props.text} </p>
         </div>
     );
