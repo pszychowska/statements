@@ -13,8 +13,11 @@ const exampleArray: ExampleArrayTypes[] = [
 ];
 
 const StatementList: FC = () => {
-    const activeStatements = exampleArray.map(statement => <Statement key={statement.id} text={statement.text} />);
-    return <div>{activeStatements}</div>;
+    if (exampleArray.length > 0) {
+        const activeStatements = exampleArray.map(statement => <Statement key={statement.id} text={statement.text} />);
+        return <div>{activeStatements}</div>;
+    }
+    return <div>Brak komunikatów</div>;
 };
 
 export default StatementList;
