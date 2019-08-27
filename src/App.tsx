@@ -4,9 +4,9 @@ import StatementList from "./components/StatementList/StatementList";
 import { StatementModel } from "./shared/StatementModel";
 
 const exampleArray: StatementModel[] = [
-    { id: "1", text: "pierwszy komunikat" },
-    { id: "2", text: "drugi komunikat" },
-    { id: "3", text: "trzeci komunikat" }
+    { id: "1", content: "pierwszy komunikat" },
+    { id: "2", content: "drugi komunikat" },
+    { id: "3", content: "trzeci komunikat" }
 ];
 
 const App: FC = () => {
