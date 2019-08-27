@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import styles from "./app.module.scss";
-import StatementList from "./Components/StatementList/StatementList";
+import StatementList from "./components/StatementList/StatementList";
 
 const App: FC = () => {
     return (
