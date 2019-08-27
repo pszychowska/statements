@@ -12,7 +12,7 @@ const exampleArray: ExampleArrayTypes[] = [
     { id: 3, text: "trzeci komunikat" }
 ];
 
-const StatementList: FC<{}> = () => {
+const StatementList: FC = () => {
     const activeStatements = exampleArray.map(statement => <Statement key={statement.id} text={statement.text} />);
     return <div>{activeStatements}</div>;
 };
