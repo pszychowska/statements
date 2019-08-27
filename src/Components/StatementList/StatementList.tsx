@@ -1,18 +1,20 @@
 import React, { FC } from "react";
 import Statement from "../Statement/Statement";
 
-interface RecordTypes {
+interface ExampleArrayTypes {
     id: number;
     text: string;
 }
-const exampleArray: RecordTypes[] = [
+
+const exampleArray: ExampleArrayTypes[] = [
     { id: 1, text: "pierwszy komunikat" },
     { id: 2, text: "drugi komunikat" },
     { id: 3, text: "trzeci komunikat" }
 ];
 
 const StatementList: FC<{}> = () => {
-    return <Statement id={exampleArray[0].id} text={exampleArray[0].text} />;
+    const activeStatements = exampleArray.map(statement => <Statement key={statement.id} text={statement.text} />);
+    return <div>{activeStatements}</div>;
 };
 
 export default StatementList;
