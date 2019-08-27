@@ -1,6 +1,4 @@
 @import "./style/index.scss";
 
 .app {
-    background: $background;
-    @include example-mixin-transform(rotate(-30deg));
 }
