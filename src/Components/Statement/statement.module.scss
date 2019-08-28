@@ -1,5 +1,15 @@
 @import "./src/style/index.scss";
 
 .statement {
-    background-color: red;
+    @include default-margin;
+    height: 100vh;
+    position: relative;
+
+    > p {
+        @include default-font;
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 10% 15%;
+    }
 }

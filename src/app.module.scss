@@ -1,4 +1,8 @@
 @import "./style/index.scss";
 
-.app {
+body {
+    @include default-margin();
+    @include default-color();
 }
+// .app {
+// }
