@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { Component } from "react";
 import { StatementModel } from "../../shared/StatementModel";
 import StatementList from "../statementList/StatementList";
 import { transitions } from "../../routes/transitions";
@@ -8,25 +8,33 @@ interface HomePageContainerProps {
     history: SimpleHistory;
 }
 
-export const HomePageContainer: FC<HomePageContainerProps> = (props: HomePageContainerProps) => {
-    const exampleArray: StatementModel[] = [
+export class HomePageContainer extends Component<HomePageContainerProps> {
+    private exampleArray: StatementModel[] = [
         { id: "1", content: "pierwszy komunikat" },
         { id: "2", content: "drugi komunikat" },
         { id: "3", content: "trzeci komunikat" }
     ];
 
-    return (
-        <div>
-            <button
-                onClick={() => {
-                    transitions.adminPanel(props.history);
-                }}
-            >
-                Go to admin panel
-            </button>
+    async componentDidMount() {
+        // example request to microservies
+        // const statements = await defaultStatementsService.get();
+        // console.log(statements.data);
+    }
 
-            <h1>Home Page</h1>
-            <StatementList statements={exampleArray} />
-        </div>
-    );
-};
+    public render() {
+        return (
+            <div>
+                <button
+                    onClick={() => {
+                        transitions.adminPanel(this.props.history);
+                    }}
+                >
+                    Go to admin panel
+                </button>
+
+                <h1>Home Page</h1>
+                <StatementList statements={this.exampleArray} />
+            </div>
+        );
+    }
+}
