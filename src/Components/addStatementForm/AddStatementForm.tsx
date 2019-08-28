@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import pl from "../shared/messages/pl";
+import pl from "../../shared/messages/pl";
 
 interface AddStatementFormState {
     content: string;

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import AddStatementForm from "../AddStatementForm/AddStatementForm";
+import AddStatementForm from "../addStatementForm/AddStatementForm";
 
 class AdminPanel extends Component {
     render() {
