@@ -1,9 +1,9 @@
 import React, { FC } from "react";
 import styles from "./app.module.scss";
 import StatementList from "./components/StatementList/StatementList";
-import { StatementProps } from "./shared/StatementProps";
+import { StatementModel } from "./shared/StatementModel";
 
-const exampleArray: StatementProps[] = [
+const exampleArray: StatementModel[] = [
     { id: "1", content: "pierwszy komunikat" },
     { id: "2", content: "drugi komunikat" },
     { id: "3", content: "trzeci komunikat" }
@@ -12,7 +12,7 @@ const exampleArray: StatementProps[] = [
 const App: FC = () => {
     return (
         <div className={styles.app}>
-            <StatementList array={exampleArray} />
+            <StatementList statements={exampleArray} />
         </div>
     );
 };
