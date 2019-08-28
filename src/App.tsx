@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import styles from "./app.module.scss";
-import StatementList from "./components/StatementList/StatementList";
+import StatementList from "./components/statementList/StatementList";
 import { StatementModel } from "./shared/StatementModel";
 
 const exampleArray: StatementModel[] = [

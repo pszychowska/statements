@@ -1,6 +1,6 @@
 import React, { FC } from "react";
-import Statement from "../Statement/Statement";
-import { StatementModel} from "../../shared/StatementModel";
+import Statement from "../statement/Statement";
+import { StatementModel } from "../../shared/StatementModel";
 
 interface StatementListProps {
     statements: StatementModel[];
