@@ -1,9 +1,9 @@
 import React, { FC } from "react";
 import styles from "./app.module.scss";
 import StatementList from "./components/StatementList/StatementList";
-import { StatementModel } from "./shared/StatementModel";
+import { StatementProps } from "./shared/StatementProps";
 
-const exampleArray: StatementModel[] = [
+const exampleArray: StatementProps[] = [
     { id: "1", content: "pierwszy komunikat" },
     { id: "2", content: "drugi komunikat" },
     { id: "3", content: "trzeci komunikat" }

@@ -1,4 +1,4 @@
-export interface StatementModel {
+export interface StatementProps {
     id: string;
     content: string;
 }
