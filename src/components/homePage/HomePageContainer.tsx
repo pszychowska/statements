@@ -10,9 +10,9 @@ interface HomePageContainerProps {
 
 export class HomePageContainer extends Component<HomePageContainerProps> {
     private exampleArray: StatementModel[] = [
-        { id: "1", content: "pierwszy komunikat" },
-        { id: "2", content: "drugi komunikat" },
-        { id: "3", content: "trzeci komunikat" }
+        // { id: "1", content: "pierwszy komunikat" },
+        // { id: "2", content: "drugi komunikat" },
+        // { id: "3", content: "trzeci komunikat" }
     ];
 
     async componentDidMount() {

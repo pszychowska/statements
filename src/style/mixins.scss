@@ -6,7 +6,7 @@
 }
 
 @mixin default-color() {
-    background-color: $dark-background;
+    background-image: $default-background;
     color: $font-color;
 }
 

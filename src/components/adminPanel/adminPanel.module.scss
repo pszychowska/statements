@@ -1,13 +1,11 @@
 @import "./src/style/index.scss";
 
 body {
-    height: 100vh;
-    background-image: linear-gradient(to top right, $light-background, $darkblue-background);
-}
-.wraper {
     @include default-font;
     @include default-margin;
-
+    height: 100vh;
+}
+.wraper {
     .header {
         margin: 2% 10%;
         padding: 3% 0;

@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import Statement from "../statement/Statement";
 import { StatementModel } from "../../shared/StatementModel";
+import styles from "./statementList.module.scss";
 
 interface StatementListProps {
     statements: StatementModel[];
@@ -13,7 +14,7 @@ const StatementList: FC<StatementListProps> = (props: StatementListProps) => {
         ));
         return <div>{activeStatements}</div>;
     }
-    return <div>Brak komunikatów</div>;
+    return <div className={styles.noStatement}>Brak komunikatów</div>;
 };
 
 export default StatementList;
