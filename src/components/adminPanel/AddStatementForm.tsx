@@ -14,21 +14,12 @@ export default class AddStatementForm extends Component<{}, AddStatementFormStat
         endTime: ""
     };
 
-    private changeHandlerInput = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const key: string = e.currentTarget.name;
-
-        if (Object.keys(this.state).includes(key)) {
-            this.setState({ [key]: e.currentTarget.value } as Pick<AddStatementFormState, keyof AddStatementFormState>);
-        }
-    };
-
     private changeHandlerTextarea = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-        const key: string = e.currentTarget.name;
-
-        if (Object.keys(this.state).includes(key)) {
-            this.setState({ [key]: e.currentTarget.value } as Pick<AddStatementFormState, keyof AddStatementFormState>);
-        }
+        this.setState({
+            content: e.currentTarget.value
+        });
     };
+
     private submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
     };
@@ -43,27 +34,32 @@ export default class AddStatementForm extends Component<{}, AddStatementFormStat
                 </div>
                 <div className={styles.date}>
                     <span>{pl.adminPanel.labels.startDate}</span>
-
                     <input
                         name="startTime"
                         type="datetime-local"
-                        onChange={this.changeHandlerInput}
+                        onChange={e => {
+                            this.setState({ startTime: e.target.value });
+                        }}
                         value={this.state.startTime}
                     />
                 </div>
                 <div className={styles.date}>
                     <span> {pl.adminPanel.labels.endDate}</span>
-
                     <input
                         name="endTime"
                         type="datetime-local"
-                        onChange={this.changeHandlerInput}
+                        onChange={e => {
+                            this.setState({ endTime: e.target.value });
+                        }}
                         value={this.state.endTime}
                     />
                 </div>
                 <button className={styles.submit} type="submit">
                     {pl.adminPanel.labels.submit}
                 </button>
+                {(this.state.endTime !== "" && this.state.startTime !== "") || (
+                    <label>{pl.adminPanel.labels.warning}</label>
+                )}
             </form>
         );
     }

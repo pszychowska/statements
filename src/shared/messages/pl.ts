@@ -4,7 +4,8 @@ export default {
             content: "Treść komunikatu",
             startDate: "Wyświetlaj od",
             endDate: "Wyświetlaj do",
-            submit: "Zatwierdź"
+            submit: "Zatwierdź",
+            warning: "Wprowadź obie daty"
         }
     }
 };
