@@ -4,17 +4,14 @@ body {
     @include default-font;
     @include default-margin;
 }
-.adminPanelHeader {
+.header {
     text-align: center;
 }
 
-.adminPanelForm {
+.text {
     background-color: cyan;
-    margin: 0 auto;
-}
-
-.adminPanelText,
-.adminPanelDate,
-.adminPanelButton {
-    display: block;
+    > textarea {
+        height: 100px;
+        width: 200px;
+    }
 }
