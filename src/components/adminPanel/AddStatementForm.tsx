@@ -29,32 +29,30 @@ export default class AddStatementForm extends Component<{}, AddStatementFormStat
     render() {
         return (
             <form className={styles.adminPanelForm} onSubmit={this.submitHandler}>
-                {pl.adminPanel.labels.content}
-                <input
-                    className={styles.adminPanelText}
-                    name="content"
-                    type="text"
-                    onChange={this.changeHandler}
-                    value={this.state.content}
-                />
-                {pl.adminPanel.labels.startDate}
-                <input
-                    className={styles.adminPanelDate}
-                    name="startTime"
-                    type="datetime-local"
-                    onChange={this.changeHandler}
-                    value={this.state.startTime}
-                />
-                {pl.adminPanel.labels.endDate}
-                <input
-                    className={styles.adminPanelDate}
-                    name="endTime"
-                    type="datetime-local"
-                    onChange={this.changeHandler}
-                    value={this.state.endTime}
-                />
+                <div className={styles.adminPanelText}>
+                    <p>{pl.adminPanel.labels.content}</p>
+                    <input name="content" type="text" onChange={this.changeHandler} value={this.state.content} />
+                </div>
+                <div className={styles.adminPanelDate}>
+                    <p>{pl.adminPanel.labels.startDate}</p>
+                    <input
+                        name="startTime"
+                        type="datetime-local"
+                        onChange={this.changeHandler}
+                        value={this.state.startTime}
+                    />
+                </div>
+                <div className={styles.adminPanelDate}>
+                    <p>{pl.adminPanel.labels.endDate}</p>
+                    <input
+                        name="endTime"
+                        type="datetime-local"
+                        onChange={this.changeHandler}
+                        value={this.state.endTime}
+                    />
+                </div>
                 <button className={styles.adminPanelButton} type="submit">
-                    Zatwierdź
+                    {pl.adminPanel.labels.submit}
                 </button>
             </form>
         );

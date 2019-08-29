@@ -10,4 +10,11 @@ body {
 
 .adminPanelForm {
     background-color: cyan;
+    margin: 0 auto;
+}
+
+.adminPanelText,
+.adminPanelDate,
+.adminPanelButton {
+    display: block;
 }

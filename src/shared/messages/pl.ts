@@ -3,7 +3,8 @@ export default {
         labels: {
             content: "Treść komunikatu",
             startDate: "Wyświetlaj od",
-            endDate: "Wyświetlaj do"
+            endDate: "Wyświetlaj do",
+            submit: "Zatwierdź"
         }
     }
 };

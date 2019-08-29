@@ -3,7 +3,6 @@ import { StatementModel } from "../../shared/StatementModel";
 import StatementList from "../statementList/StatementList";
 import { transitions } from "../../routes/transitions";
 import { SimpleHistory } from "../../shared/routing/SimpleHistory";
-import styles from "./homePage.module.scss";
 
 interface HomePageContainerProps {
     history: SimpleHistory;
@@ -25,8 +24,9 @@ export class HomePageContainer extends Component<HomePageContainerProps> {
     public render() {
         return (
             <div>
+                {/* docelowo przycisk do usunięcia  */}
+
                 <button
-                    className={styles.homePageButton}
                     onClick={() => {
                         transitions.adminPanel(this.props.history);
                     }}
