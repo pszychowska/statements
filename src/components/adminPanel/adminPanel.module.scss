@@ -4,7 +4,9 @@ body {
     @include default-font;
     @include default-margin;
     height: 100vh;
+    background-color: $default-background;
 }
+
 .wraper {
     .header {
         margin: 2% 10%;
