@@ -33,17 +33,17 @@
 }
 
 @mixin mediumDevice() {
-    @media (min-width: $mediumDeviceWidth) {
+    @media (min-width: $medium-device-width) {
         @content;
     }
 
-    @media (orientation: portrait) and (min-width: $mediumDeviceWidth) {
+    @media (orientation: portrait) and (min-width: $medium-device-width) {
         @content;
     }
 }
 
 @mixin largeDevice() {
-    @media (min-width: $largeDeviceWidth) {
+    @media (min-width: $large-device-width) {
         @content;
     }
 }

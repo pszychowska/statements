@@ -1,5 +1,9 @@
 @import "./src/style/index.scss";
 
+body {
+    height: 100vh;
+    background-image: linear-gradient(to top right, $light-background, $darkblue-background);
+}
 .wraper {
     @include default-font;
     @include default-margin;
