@@ -1,12 +1,12 @@
 @import "./src/style/index.scss";
 
-.statement {
+.statementContainer {
     @include default-margin;
     width: 100vw;
     height: 100vh;
     position: relative;
 
-    > p {
+    > .statementText {
         @include default-font;
         @include mediumDevice;
         @include largeDevice;
@@ -16,5 +16,6 @@
         top: 10%;
         left: 10%;
         right: 10%;
+        font-size: 32px;
     }
 }

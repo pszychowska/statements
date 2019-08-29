@@ -1,0 +1,5 @@
+@import "./src/style/index.scss";
+
+.homePageButton {
+    @include default-button;
+}

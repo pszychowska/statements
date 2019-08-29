@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import pl from "../../shared/messages/pl";
+import styles from "./adminPanel.module.scss";
 
 interface AddStatementFormState {
     content: string;
@@ -27,19 +28,34 @@ export default class AddStatementForm extends Component<{}, AddStatementFormStat
 
     render() {
         return (
-            <form onSubmit={this.submitHandler}>
+            <form className={styles.adminPanelForm} onSubmit={this.submitHandler}>
                 {pl.adminPanel.labels.content}
-                <input name="content" type="text" onChange={this.changeHandler} value={this.state.content} />
+                <input
+                    className={styles.adminPanelText}
+                    name="content"
+                    type="text"
+                    onChange={this.changeHandler}
+                    value={this.state.content}
+                />
                 {pl.adminPanel.labels.startDate}
                 <input
+                    className={styles.adminPanelDate}
                     name="startTime"
                     type="datetime-local"
                     onChange={this.changeHandler}
                     value={this.state.startTime}
                 />
                 {pl.adminPanel.labels.endDate}
-                <input name="endTime" type="datetime-local" onChange={this.changeHandler} value={this.state.endTime} />
-                <button type="submit">Zatwierdz</button>
+                <input
+                    className={styles.adminPanelDate}
+                    name="endTime"
+                    type="datetime-local"
+                    onChange={this.changeHandler}
+                    value={this.state.endTime}
+                />
+                <button className={styles.adminPanelButton} type="submit">
+                    Zatwierdź
+                </button>
             </form>
         );
     }

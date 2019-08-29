@@ -7,8 +7,8 @@ interface StatementProps {
 
 const Statement: FC<StatementProps> = (props: StatementProps) => {
     return (
-        <div className={styles.statement}>
-            <p>{props.text}</p>
+        <div className={styles.statementContainer}>
+            <p className={styles.statementText}>{props.text}</p>
         </div>
     );
 };

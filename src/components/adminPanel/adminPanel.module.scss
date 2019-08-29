@@ -1,0 +1,13 @@
+@import "./src/style/index.scss";
+
+body {
+    @include default-font;
+    @include default-margin;
+}
+.adminPanelHeader {
+    text-align: center;
+}
+
+.adminPanelForm {
+    background-color: cyan;
+}

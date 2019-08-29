@@ -3,6 +3,7 @@ import { StatementModel } from "../../shared/StatementModel";
 import StatementList from "../statementList/StatementList";
 import { transitions } from "../../routes/transitions";
 import { SimpleHistory } from "../../shared/routing/SimpleHistory";
+import styles from "./homePage.module.scss";
 
 interface HomePageContainerProps {
     history: SimpleHistory;
@@ -25,14 +26,13 @@ export class HomePageContainer extends Component<HomePageContainerProps> {
         return (
             <div>
                 <button
+                    className={styles.homePageButton}
                     onClick={() => {
                         transitions.adminPanel(this.props.history);
                     }}
                 >
-                    Go to admin panel
+                    Przejdź do panelu administracyjnego
                 </button>
-
-                <h1>Home Page</h1>
                 <StatementList statements={this.exampleArray} />
             </div>
         );
