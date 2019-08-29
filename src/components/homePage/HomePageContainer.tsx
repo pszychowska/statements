@@ -3,22 +3,29 @@ import { StatementModel } from "../../shared/StatementModel";
 import StatementList from "../statementList/StatementList";
 import { transitions } from "../../routes/transitions";
 import { SimpleHistory } from "../../shared/routing/SimpleHistory";
+import defaultStatementsService from "../../shared/service/StatementsService";
+import { StatementFromResponse } from "../../shared/api/StatementFromResponse";
 
 interface HomePageContainerProps {
     history: SimpleHistory;
 }
 
-export class HomePageContainer extends Component<HomePageContainerProps> {
-    private exampleArray: StatementModel[] = [
-        // { id: "1", content: "pierwszy komunikat" },
-        // { id: "2", content: "drugi komunikat" },
-        // { id: "3", content: "trzeci komunikat" }
-    ];
+interface HomePageContainerState {
+    statements: StatementModel[];
+}
+
+export class HomePageContainer extends Component<HomePageContainerProps, HomePageContainerState> {
+    state = {
+        statements: []
+    };
 
     async componentDidMount() {
-        // example request to microservies
-        // const statements = await defaultStatementsService.get();
-        // console.log(statements.data);
+        const statementsResponse = await defaultStatementsService.get();
+        const mappedStatements = statementsResponse.data.map(x => new StatementFromResponse(x).statement());
+
+        this.setState({
+            statements: mappedStatements
+        });
     }
 
     public render() {
@@ -33,7 +40,9 @@ export class HomePageContainer extends Component<HomePageContainerProps> {
                 >
                     Przejdź do panelu administracyjnego
                 </button>
-                <StatementList statements={this.exampleArray} />
+
+                <h1>Home Page</h1>
+                <StatementList statements={this.state.statements} />
             </div>
         );
     }
