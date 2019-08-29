@@ -20,7 +20,11 @@ class AdminPanel extends Component<{}, AdminPanelState> {
     public render() {
         return (
             <div>
-                <AddStatementForm />
+                <AddStatementForm
+                    onSubmit={async () => {
+                        await this.downloadStatements();
+                    }}
+                />
                 <StatementList
                     statements={this.state.statements}
                     deleteHandler={() => {
