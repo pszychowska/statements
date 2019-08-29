@@ -2,14 +2,13 @@
 
 .statement {
     @include default-margin;
+
     width: 100vw;
     height: 100vh;
     position: relative;
 
     > p {
         @include default-font;
-        @include mediumDevice;
-        @include largeDevice;
         max-width: 100%;
         max-height: 100%;
         position: absolute;
@@ -17,5 +16,15 @@
         left: 10%;
         right: 10%;
         font-size: 32px;
+    }
+    @include mediumDevice() {
+        p {
+            font-size: 56px;
+        }
+    }
+    @include largeDevice() {
+        p {
+            font-size: 76px;
+        }
     }
 }

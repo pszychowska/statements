@@ -5,17 +5,17 @@ body {
     @include default-margin;
 }
 .header {
-    margin: 2% 20%;
+    margin: 2% 10%;
     padding: 3% 0;
     border-bottom: $border-color solid 2px;
     text-transform: uppercase;
     text-align: right;
-    font-size: 36px;
+    font-size: 24px;
 }
 
 .form {
     > .text {
-        margin: 0 20% 2%;
+        margin: 0 10% 2%;
         display: flex;
         > span {
             @include default-span;
@@ -23,12 +23,12 @@ body {
         }
         > textarea {
             flex-basis: 60%;
-            height: 100px;
+            height: 80px;
             width: 220px;
         }
     }
     > .date {
-        margin: 0 20% 2%;
+        margin: 0 10% 2%;
         display: flex;
         > span {
             @include default-span;
@@ -42,7 +42,7 @@ body {
 
     > .submit {
         @include default-button;
-        margin: 0 auto;
+        margin: 2% auto;
 
         &:hover {
             color: $button-color;

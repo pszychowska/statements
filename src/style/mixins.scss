@@ -12,24 +12,24 @@
 
 @mixin default-font() {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
+    font-size: 16px;
     text-align: center;
     letter-spacing: 1.5px;
 }
 
 @mixin mediumDevice() {
-    @media (min-width: 768px) {
-        font-size: 56px;
+    @media (min-width: $mediumDeviceWidth) {
+        @content;
     }
 
-    @media (orientation: portrait) and (min-width: 576px) {
-        font-size: 56px;
+    @media (orientation: portrait) and (min-width: $mediumDeviceWidth) {
+        @content;
     }
 }
 
 @mixin largeDevice() {
-    @media (min-width: 1024px) {
-        font-size: 76px;
+    @media (min-width: $largeDeviceWidth) {
+        @content;
     }
 }
 
@@ -40,7 +40,7 @@
     text-transform: uppercase;
     color: $border-color;
     background-color: $button-color;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
     letter-spacing: 2px;
     line-height: 1.5;
