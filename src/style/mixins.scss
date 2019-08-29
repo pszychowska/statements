@@ -34,6 +34,16 @@
 }
 
 @mixin default-button {
+    padding: 10px;
     border: solid $border-color 2px;
+    border-radius: 7%;
     text-transform: uppercase;
+    color: $border-color;
+    background-color: $button-color;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    line-height: 1.5;
+    text-align: justify;
+    transition: 0.3s;
 }

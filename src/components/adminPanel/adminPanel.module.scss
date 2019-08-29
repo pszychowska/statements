@@ -5,13 +5,26 @@ body {
     @include default-margin;
 }
 .header {
+    margin: 2% 20% 2%;
+    padding: 3%;
+    border-bottom: $border-color solid 2px;
+    text-transform: uppercase;
     text-align: center;
 }
 
 .text {
-    background-color: cyan;
     > textarea {
         height: 100px;
         width: 200px;
+    }
+}
+
+.submit {
+    @include default-button;
+    margin: 3% auto;
+
+    &:hover {
+        color: $button-color;
+        background-color: $border-color;
     }
 }
