@@ -19,13 +19,17 @@ export class HomePageContainer extends Component<HomePageContainerProps, HomePag
         statements: []
     };
 
-    async componentDidMount() {
-        const statementsResponse = await defaultStatementsService.get();
-        const mappedStatements = statementsResponse.data.map(x => new StatementFromResponse(x).statement());
+    interval: number = 0;
 
-        this.setState({
-            statements: mappedStatements
-        });
+    async componentDidMount() {
+        this.downloadStatements();
+        this.interval = window.setInterval(async () => {
+            await this.downloadStatements();
+        }, 1800000);
+    }
+
+    componentWillUnmount() {
+        window.clearInterval(this.interval);
     }
 
     public render() {
@@ -45,5 +49,13 @@ export class HomePageContainer extends Component<HomePageContainerProps, HomePag
                 <StatementList statements={this.state.statements} />
             </div>
         );
+    }
+
+    private async downloadStatements() {
+        const statementsResponse = await defaultStatementsService.get();
+        const mappedStatements = statementsResponse.data.map(x => new StatementFromResponse(x).statement());
+        this.setState({
+            statements: mappedStatements
+        });
     }
 }
