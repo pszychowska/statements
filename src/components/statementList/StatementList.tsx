@@ -13,6 +13,9 @@ const StatementList: FC<StatementListProps> = (props: StatementListProps) => {
         const activeStatements = props.statements.map(statement => (
             <Statement key={statement.id} text={statement.content} />
         ));
+        if (activeStatements.length === 1) {
+            return <div>{activeStatements}</div>;
+        }
         return (
             <Carousel
                 autoplay={true}
