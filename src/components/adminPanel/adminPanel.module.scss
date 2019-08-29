@@ -5,26 +5,48 @@ body {
     @include default-margin;
 }
 .header {
-    margin: 2% 20% 2%;
-    padding: 3%;
+    margin: 2% 20%;
+    padding: 3% 0;
     border-bottom: $border-color solid 2px;
     text-transform: uppercase;
-    text-align: center;
+    text-align: right;
+    font-size: 36px;
 }
 
-.text {
-    > textarea {
-        height: 100px;
-        width: 200px;
+.form {
+    > .text {
+        margin: 0 20% 2%;
+        display: flex;
+        > span {
+            @include default-span;
+            flex-basis: 40%;
+        }
+        > textarea {
+            flex-basis: 60%;
+            height: 100px;
+            width: 220px;
+        }
     }
-}
+    > .date {
+        margin: 0 20% 2%;
+        display: flex;
+        > span {
+            @include default-span;
+            flex-basis: 40%;
+        }
+        > input {
+            flex-basis: 60%;
+            width: 220px;
+        }
+    }
 
-.submit {
-    @include default-button;
-    margin: 3% auto;
+    > .submit {
+        @include default-button;
+        margin: 0 auto;
 
-    &:hover {
-        color: $button-color;
-        background-color: $border-color;
+        &:hover {
+            color: $button-color;
+            background-color: $border-color;
+        }
     }
 }

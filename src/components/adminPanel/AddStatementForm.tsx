@@ -37,11 +37,13 @@ export default class AddStatementForm extends Component<{}, AddStatementFormStat
         return (
             <form className={styles.form} onSubmit={this.submitHandler}>
                 <div className={styles.text}>
-                    {pl.adminPanel.labels.content}
+                    <span> {pl.adminPanel.labels.content}</span>
+
                     <textarea name="content" onChange={this.changeHandlerTextarea} value={this.state.content} />
                 </div>
                 <div className={styles.date}>
-                    {pl.adminPanel.labels.startDate}
+                    <span>{pl.adminPanel.labels.startDate}</span>
+
                     <input
                         name="startTime"
                         type="datetime-local"
@@ -50,7 +52,8 @@ export default class AddStatementForm extends Component<{}, AddStatementFormStat
                     />
                 </div>
                 <div className={styles.date}>
-                    {pl.adminPanel.labels.endDate}
+                    <span> {pl.adminPanel.labels.endDate}</span>
+
                     <input
                         name="endTime"
                         type="datetime-local"
