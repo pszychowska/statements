@@ -13,12 +13,9 @@ const StatementList: FC<StatementListProps> = (props: StatementListProps) => {
         const activeStatements = props.statements.map(statement => (
             <Statement key={statement.id} text={statement.content} />
         ));
-        if (activeStatements.length === 1) {
-            return <div>{activeStatements}</div>;
-        }
         return (
             <Carousel
-                autoplay={true}
+                autoplay={activeStatements.length > 1}
                 autoplayInterval={3500} //ile wyswietla sie komunikat w ms
                 wrapAround={true}
                 withoutControls={true}
