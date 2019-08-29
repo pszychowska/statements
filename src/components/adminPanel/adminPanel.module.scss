@@ -1,52 +1,84 @@
 @import "./src/style/index.scss";
 
-body {
+.wraper {
     @include default-font;
     @include default-margin;
-}
-.header {
-    margin: 2% 10%;
-    padding: 3% 0;
-    border-bottom: $border-color solid 2px;
-    text-transform: uppercase;
-    text-align: right;
-    font-size: 24px;
-}
 
-.form {
-    > .text {
-        margin: 0 10% 2%;
-        display: flex;
-        > span {
-            @include default-span;
-            flex-basis: 40%;
-        }
-        > textarea {
-            flex-basis: 60%;
-            height: 80px;
-            width: 220px;
-        }
-    }
-    > .date {
-        margin: 0 10% 2%;
-        display: flex;
-        > span {
-            @include default-span;
-            flex-basis: 40%;
-        }
-        > input {
-            flex-basis: 60%;
-            width: 220px;
-        }
+    .header {
+        margin: 2% 10%;
+        padding: 3% 0;
+        border-bottom: $border-color solid 2px;
+        text-transform: uppercase;
+        text-align: right;
+        font-size: 24px;
     }
 
-    > .submit {
-        @include default-button;
-        margin: 2% auto;
+    .form {
+        > .text {
+            margin: 0 10% 2%;
+            display: flex;
+            > span {
+                flex-basis: 40%;
+                text-align: right;
+                padding-right: 1%;
+            }
+            > textarea {
+                flex-basis: 60%;
+                height: 80px;
+                width: 220px;
+                font-size: 12px;
+            }
+        }
+        > .date {
+            margin: 0 10% 2%;
+            display: flex;
+            > span {
+                flex-basis: 40%;
+                text-align: right;
+                padding-right: 1%;
+            }
+            > input {
+                flex-basis: 60%;
+                height: 20px;
+                width: 220px;
+            }
+        }
 
-        &:hover {
-            color: $button-color;
-            background-color: $border-color;
+        > .submit {
+            @include default-button;
+            margin: 2% auto;
+
+            &:hover {
+                color: $button-color;
+                background-color: $border-color;
+            }
+        }
+    }
+    @include mediumDevice() {
+        .header {
+            font-size: 36px;
+        }
+        .form {
+            font-size: 20px;
+        }
+        .form > .text > textarea {
+            font-size: 16px;
+        }
+    }
+
+    @include largeDevice() {
+        .header {
+            margin: 2% 20%;
+            font-size: 48px;
+        }
+
+        .form > .text,
+        .form > .date {
+            margin: 0 20% 2%;
+        }
+
+        .form > .text > textarea {
+            font-size: 20px;
         }
     }
 }

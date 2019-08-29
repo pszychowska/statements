@@ -17,22 +17,6 @@
     letter-spacing: 1.5px;
 }
 
-@mixin mediumDevice() {
-    @media (min-width: $mediumDeviceWidth) {
-        @content;
-    }
-
-    @media (orientation: portrait) and (min-width: $mediumDeviceWidth) {
-        @content;
-    }
-}
-
-@mixin largeDevice() {
-    @media (min-width: $largeDeviceWidth) {
-        @content;
-    }
-}
-
 @mixin default-button {
     padding: 10px;
     border: solid $border-color 2px;
@@ -48,7 +32,18 @@
     transition: 0.3s;
 }
 
-@mixin default-span {
-    text-align: right;
-    padding-right: 1%;
+@mixin mediumDevice() {
+    @media (min-width: $mediumDeviceWidth) {
+        @content;
+    }
+
+    @media (orientation: portrait) and (min-width: $mediumDeviceWidth) {
+        @content;
+    }
+}
+
+@mixin largeDevice() {
+    @media (min-width: $largeDeviceWidth) {
+        @content;
+    }
 }
