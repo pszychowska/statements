@@ -37,7 +37,9 @@ class AdminPanel extends Component<{}, AdminPanelState> {
 
     private async downloadStatements() {
         const statementsResponse = await defaultStatementsService.get();
-        const mappedStatements = statementsResponse.data.map(x => new StatementFromResponse(x).statement());
+        const mappedStatements = statementsResponse.data
+            .sort((a, b) => new Date(a.endTime).getTime() - new Date(b.endTime).getTime())
+            .map(x => new StatementFromResponse(x).statement());
 
         this.setState({
             statements: mappedStatements
