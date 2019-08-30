@@ -1,4 +1,5 @@
 import React, { FC } from "react";
+import styles from "./statement.module.scss";
 
 interface StatementProps {
     id: string;
@@ -9,10 +10,12 @@ interface StatementProps {
 
 const Statement: FC<StatementProps> = (props: StatementProps) => {
     return (
-        <div>
-            <p>{props.text}</p>
-            <button onClick={props.onDeleteClick}>Usuń Komunikat</button>
-        </div>
+        <li>
+            {props.text}
+            <button className={styles.delete} onClick={props.onDeleteClick}>
+                X
+            </button>
+        </li>
     );
 };
 

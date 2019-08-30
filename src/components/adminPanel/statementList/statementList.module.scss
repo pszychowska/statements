@@ -1,0 +1,52 @@
+@import "./src/style/index.scss";
+
+.wraper {
+    .list {
+        list-style: none;
+        margin: 10%;
+        padding: 1% 0;
+        text-align: left;
+        font-size: 12px;
+
+        > h2 {
+            margin-right: 40%;
+            padding: 1% 0;
+            border-bottom: $border-color solid 2px;
+            text-transform: uppercase;
+        }
+    }
+    @include mediumDevice() {
+        .list {
+            font-size: 16px;
+        }
+    }
+    @include largeDevice() {
+        .list {
+            margin: 5% 20%;
+            font-size: 22px;
+        }
+        .list > h2 {
+            margin-right: 33%;
+        }
+    }
+}
+
+.noStatements {
+    margin: 10%;
+    padding: 1% 0;
+    border-bottom: $border-color solid 2px;
+    text-transform: uppercase;
+    text-align: left;
+    font-size: 12px;
+}
+@include mediumDevice() {
+    .noStatements {
+        font-size: 22px;
+    }
+}
+@include largeDevice() {
+    .noStatements {
+        margin: 5% 33% 5% 20%;
+        font-size: 34px;
+    }
+}

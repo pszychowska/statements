@@ -3,14 +3,14 @@
 body {
     @include default-font;
     @include default-margin;
-    height: 100vh;
+    min-height: 100vh;
     background-color: $default-background;
 }
 
 .wraper {
     .header {
         margin: 2% 10%;
-        padding: 3% 0;
+        padding: 1% 0;
         border-bottom: $border-color solid 2px;
         text-transform: uppercase;
         text-align: right;
@@ -18,31 +18,35 @@ body {
     }
 
     .form {
+        font-size: 12px;
         > .text {
             margin: 0 10% 2%;
-            display: flex;
-            > span {
-                flex-basis: 40%;
+            > label {
                 text-align: right;
                 padding-right: 1%;
             }
+
             > textarea {
-                flex-basis: 60%;
                 height: 80px;
                 width: 220px;
-                font-size: 12px;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 10px;
+                color: $darkblue-background;
             }
         }
+
         > .date {
             margin: 0 10% 2%;
-            display: flex;
-            > span {
-                flex-basis: 40%;
+
+            > label {
                 text-align: right;
                 padding-right: 1%;
             }
+            label::before {
+                content: " *";
+                color: $button-color;
+            }
             > input {
-                flex-basis: 60%;
                 height: 20px;
                 width: 220px;
             }
@@ -50,11 +54,16 @@ body {
 
         > .submit {
             @include default-button;
-            margin: 2% auto;
+            margin: 0 auto;
+            border: solid $border-color 1px;
+            font-size: 12px;
+            padding: 5px;
+            letter-spacing: 1px;
 
             &:hover {
                 color: $button-color;
                 background-color: $border-color;
+                border-color: $button-color;
             }
         }
     }
@@ -68,6 +77,14 @@ body {
         .form > .text > textarea {
             font-size: 16px;
         }
+        .form > .submit {
+            @include default-button;
+            margin: 0 auto;
+            border: solid $border-color 2px;
+            font-size: 14px;
+            padding: 10px;
+            letter-spacing: 2px;
+        }
     }
 
     @include largeDevice() {
@@ -76,9 +93,122 @@ body {
             font-size: 48px;
         }
 
-        .form > .text,
+        .form > .text {
+            margin: 0 20% 3%;
+        }
         .form > .date {
-            margin: 0 20% 2%;
+            margin: 0 20% 1%;
+        }
+
+        .form > .text > textarea {
+            font-size: 20px;
+        }
+    }
+}
+@import "./src/style/index.scss";
+
+body {
+    @include default-font;
+    @include default-margin;
+    background-color: $default-background;
+}
+
+.wraper {
+    .header {
+        margin: 2% 10%;
+        padding: 1% 0;
+        border-bottom: $border-color solid 2px;
+        text-transform: uppercase;
+        text-align: right;
+        font-size: 24px;
+    }
+
+    .form {
+        font-size: 12px;
+        > .text {
+            margin: 0 10% 2%;
+            display: flex;
+            > label {
+                flex-basis: 40%;
+                text-align: right;
+                padding-right: 1%;
+            }
+
+            > textarea {
+                flex-basis: 60%;
+                height: 80px;
+                width: 220px;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 10px;
+                color: $darkblue-background;
+            }
+        }
+
+        > .date {
+            margin: 0 10% 2%;
+            display: flex;
+            > label {
+                flex-basis: 40%;
+                text-align: right;
+                padding-right: 1%;
+            }
+            label::before {
+                content: " *";
+                color: $button-color;
+            }
+            > input {
+                flex-basis: 60%;
+                height: 20px;
+                width: 220px;
+            }
+        }
+
+        > .submit {
+            @include default-button;
+            margin: 0 auto;
+            border: solid $border-color 1px;
+            font-size: 12px;
+            padding: 5px;
+            letter-spacing: 1px;
+
+            &:hover {
+                color: $button-color;
+                background-color: $border-color;
+                border-color: $button-color;
+            }
+        }
+    }
+    @include mediumDevice() {
+        .header {
+            font-size: 36px;
+        }
+        .form {
+            font-size: 20px;
+        }
+        .form > .text > textarea {
+            font-size: 16px;
+        }
+        .form > .submit {
+            @include default-button;
+            margin: 0 auto;
+            border: solid $border-color 2px;
+            font-size: 14px;
+            padding: 10px;
+            letter-spacing: 2px;
+        }
+    }
+
+    @include largeDevice() {
+        .header {
+            margin: 2% 20%;
+            font-size: 48px;
+        }
+
+        .form > .text {
+            margin: 0 20% 3%;
+        }
+        .form > .date {
+            margin: 0 20% 1%;
         }
 
         .form > .text > textarea {

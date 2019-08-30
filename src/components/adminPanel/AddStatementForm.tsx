@@ -63,17 +63,17 @@ export default class AddStatementForm extends Component<AddStatementFormProps, A
                 render={({ touched }) => (
                     <Form className={styles.form}>
                         <div className={styles.text}>
-                            <span> {pl.adminPanel.labels.content}</span>
+                            <label> {pl.adminPanel.labels.content}</label>
                             <textarea
                                 name="content"
                                 id="content"
                                 onChange={this.changeHandlerTextarea}
                                 value={this.state.content}
                             />
-                            {!this.state.content && <span>*</span>}
+                            {!this.state.content}
                         </div>
                         <div className={styles.date}>
-                            <span>{pl.adminPanel.labels.startDate}</span>
+                            <label>{pl.adminPanel.labels.startDate}</label>
                             <DatePicker
                                 name="startTime"
                                 selected={this.state.startTime!}
@@ -88,7 +88,7 @@ export default class AddStatementForm extends Component<AddStatementFormProps, A
                             />
                         </div>
                         <div className={styles.date}>
-                            <span> {pl.adminPanel.labels.endDate}</span>
+                            <label> {pl.adminPanel.labels.endDate}</label>
                             <DatePicker
                                 name="endTime"
                                 selected={this.state.endTime!}
