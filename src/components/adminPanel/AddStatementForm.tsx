@@ -88,7 +88,7 @@ export default class AddStatementForm extends Component<AddStatementFormProps, A
                             />
                         </div>
                         <div className={styles.date}>
-                            <label> {pl.adminPanel.labels.endDate}</label>
+                            <label>{pl.adminPanel.labels.endDate}</label>
                             <DatePicker
                                 name="endTime"
                                 selected={this.state.endTime!}
@@ -102,10 +102,10 @@ export default class AddStatementForm extends Component<AddStatementFormProps, A
                                 dateFormat="yyyy-MM-dd HH:mm"
                             />
                             {touched.endTime && this.state.endTime <= this.state.startTime && (
-                                <span>{`Data końca musi być późniejsza niż ${format(
+                                <p className={styles.warning}>{`Data końca musi być późniejsza niż ${format(
                                     this.state.startTime,
                                     "yyyy-MM-dd HH:mm"
-                                )}`}</span>
+                                )}`}</p>
                             )}
                         </div>
                         <button className={styles.submit} type="submit">
