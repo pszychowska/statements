@@ -69,6 +69,7 @@ export default class AddStatementForm extends Component<AddStatementFormProps, A
                                 id="content"
                                 onChange={this.changeHandlerTextarea}
                                 value={this.state.content}
+                                maxLength={150} 
                             />
                             {!this.state.content}
                         </div>
@@ -85,6 +86,8 @@ export default class AddStatementForm extends Component<AddStatementFormProps, A
                                 timeIntervals={15}
                                 timeCaption="time"
                                 dateFormat="yyyy-MM-dd HH:mm"
+                                
+                                
                             />
                         </div>
                         <div className={styles.date}>
