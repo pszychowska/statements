@@ -1,10 +1,10 @@
-import React, { Component, useState } from "react";
+import React, { Component } from "react";
 import pl from "../../shared/messages/pl";
 import styles from "./adminPanel.module.scss";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import defaultStatementsService from "../../shared/service/StatementsService";
-import { Formik, Form, FormikActions, FormikProps, Field, ErrorMessage } from "formik";
+import { Formik, Form, FormikActions } from "formik";
 import { format } from "date-fns";
 
 interface EditableAddStatement {
@@ -60,7 +60,7 @@ export default class AddStatementForm extends Component<AddStatementFormProps, A
                 onReset={(values: EditableAddStatement, actions: FormikActions<EditableAddStatement>) => {
                     actions.resetForm();
                 }}
-                render={({ errors, isSubmitting, resetForm, submitForm, touched }) => (
+                render={({ touched }) => (
                     <Form className={styles.form}>
                         <div className={styles.text}>
                             <span> {pl.adminPanel.labels.content}</span>

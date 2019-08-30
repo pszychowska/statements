@@ -6,7 +6,7 @@ export class StatementFromResponse {
 
     statement(): StatementModel {
         return {
-            id: this.statementResponse.rowKey,
+            id: this.statementResponse.rowKey || "",
             content: this.statementResponse.content
         };
     }

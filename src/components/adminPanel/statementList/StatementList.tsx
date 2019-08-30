@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react";
+import React, { FC } from "react";
 import Statement from "../statement/Statement";
 import { StatementModel } from "../../../shared/StatementModel";
 import defaultStatementsService from "../../../shared/service/StatementsService";

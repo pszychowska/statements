@@ -1,7 +1,7 @@
 export interface StatementDto {
-    isActive: boolean;
-    rowKey: string;
+    rowKey?: string;
     content: string;
     startTime: Date;
     endTime: Date;
+    isActive?: boolean;
 }
