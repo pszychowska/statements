@@ -15,6 +15,7 @@ const StatementList: FC<StatementListProps> = (props: StatementListProps) => {
     if (props.statements.length > 0) {
         const activeStatements = props.statements.map(statement => (
             <Statement
+                isActive={statement.isActive}
                 id={statement.id}
                 text={statement.content}
                 onDeleteClick={async () => {

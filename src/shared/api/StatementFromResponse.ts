@@ -7,7 +7,8 @@ export class StatementFromResponse {
     statement(): StatementModel {
         return {
             id: this.statementResponse.rowKey || "",
-            content: this.statementResponse.content
+            content: this.statementResponse.content,
+            isActive: this.statementResponse.isActive
         };
     }
 }
