@@ -63,7 +63,7 @@ export default class AddStatementForm extends Component<AddStatementFormProps, A
                 render={({ touched }) => (
                     <Form className={styles.form}>
                         <div className={styles.text}>
-                            <label> {pl.adminPanel.labels.content}</label>
+                            <label>{pl.adminPanel.labels.content}</label>
                             <textarea
                                 name="content"
                                 id="content"

@@ -26,6 +26,11 @@ body {
                 padding-right: 1%;
             }
 
+            label::before {
+                content: " *";
+                color: $button-color;
+            }
+
             > textarea {
                 height: 80px;
                 width: 220px;
@@ -49,10 +54,6 @@ body {
             > input {
                 height: 20px;
                 width: 220px;
-            }
-
-            > .warning {
-                color: $button-color;
             }
         }
 
@@ -107,5 +108,8 @@ body {
         .form > .text > textarea {
             font-size: 20px;
         }
+    }
+    .warning {
+        color: $button-color;
     }
 }

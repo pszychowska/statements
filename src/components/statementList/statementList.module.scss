@@ -18,3 +18,17 @@ body {
         }
     }
 }
+
+.carouselItems {
+    > div {
+        > ul {
+            li:nth-child(even) {
+                background-image: $default-background;
+            }
+
+            li:nth-child(odd) {
+                background-image: $even-background;
+            }
+        }
+    }
+}

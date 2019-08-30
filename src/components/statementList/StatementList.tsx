@@ -15,8 +15,9 @@ const StatementList: FC<StatementListProps> = (props: StatementListProps) => {
         ));
         return (
             <Carousel
+                className={styles.carouselItems}
                 autoplay={activeStatements.length > 1}
-                autoplayInterval={3500} //ile wyswietla sie komunikat w ms
+                autoplayInterval={10000} //ile wyswietla sie komunikat w ms
                 wrapAround={true}
                 withoutControls={true}
                 pauseOnHover={false}
