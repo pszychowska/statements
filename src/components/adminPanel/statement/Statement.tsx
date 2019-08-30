@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import styles from "./statement.module.scss";
+import classNames from "classnames";
 
 interface StatementProps {
     id: string;
@@ -12,11 +13,19 @@ interface StatementProps {
 const Statement: FC<StatementProps> = (props: StatementProps) => {
     return (
         <li>
-            {props.isActive ? <label>Aktywne: </label> : <label>Nie Aktywne: </label>}
-            {props.text}
-            <button className={styles.delete} onClick={props.onDeleteClick}>
-                X
-            </button>
+            <div className={styles.wrapper}>
+                <div className={styles.content}>
+                    <div
+                        className={classNames(styles.indicator, props.isActive ? styles.active : styles.inactive)}
+                    ></div>
+                    <div className={styles.contentBody}>
+                        <span className={styles.contentBody}>{props.text}</span>
+                    </div>
+                </div>
+                <button className={styles.delete} onClick={props.onDeleteClick}>
+                    X
+                </button>
+            </div>
         </li>
     );
 };

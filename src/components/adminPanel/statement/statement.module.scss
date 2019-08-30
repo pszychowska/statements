@@ -1,15 +1,57 @@
 @import "./src/style/index.scss";
 
+li {
+    width: 100%;
+    margin: 8px 0;
+    padding: 8px;
+}
+
+.content {
+    display: flex;
+    width: auto;
+    width: 100%;
+    align-items: center;
+
+    > .contentBody {
+        width: 80%;
+    }
+}
+
 .delete {
     @include default-button;
-    margin: 0 auto;
+    margin: 0;
     font-size: 10px;
-    padding: 1px;
+    padding: 16px;
+    text-align: center;
     border: solid $border-color 1px;
 
     &:hover {
         color: $button-color;
         background-color: $border-color;
         border-color: $button-color;
+    }
+}
+
+.wrapper {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.indicator {
+    width: 16px;
+    height: 16px;
+    border-radius: 8px;
+    margin: 0 8px 0 0;
+    border: 1px solid white;
+
+    &.active {
+        background-color: green;
+    }
+
+    &.inactive {
+        background-color: red;
     }
 }
