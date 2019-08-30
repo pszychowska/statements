@@ -63,7 +63,8 @@ export default class AddStatementForm extends Component<AddStatementFormProps, A
                 render={({ touched }) => (
                     <Form className={styles.form}>
                         <div className={styles.text}>
-                            <label>{pl.adminPanel.labels.content}</label>
+                            <label> {pl.adminPanel.labels.content}</label>
+                            
                             <textarea
                                 name="content"
                                 id="content"
@@ -71,7 +72,10 @@ export default class AddStatementForm extends Component<AddStatementFormProps, A
                                 value={this.state.content}
                                 maxLength={150} 
                             />
-                            {!this.state.content}
+                            {this.state.content.length >= 150 ? <p className={styles.warning}>jest więcej niż 150 znaków</p> : null}
+                            {!this.state}
+                            
+                                
                         </div>
                         <div className={styles.date}>
                             <label>{pl.adminPanel.labels.startDate}</label>
