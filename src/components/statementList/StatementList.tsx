@@ -19,10 +19,8 @@ const StatementList: FC<StatementListProps> = (props: StatementListProps) => {
                 autoplay={activeStatements.length > 1}
                 autoplayInterval={10000} //ile wyswietla sie komunikat w ms
                 wrapAround={true}
-                withoutControls={false}
+                withoutControls={true}
                 pauseOnHover={false}
-                renderCenterLeftControls={null}
-                renderCenterRightControls={null}
             >
                 {activeStatements}
             </Carousel>
