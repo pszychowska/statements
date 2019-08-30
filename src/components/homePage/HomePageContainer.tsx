@@ -33,22 +33,7 @@ export class HomePageContainer extends Component<HomePageContainerProps, HomePag
     }
 
     public render() {
-        return (
-            <div>
-                {/* docelowo przycisk do usunięcia  */}
-
-                <button
-                    onClick={() => {
-                        transitions.adminPanel(this.props.history);
-                    }}
-                >
-                    Przejdź do panelu administracyjnego
-                </button>
-
-                <h1>Home Page</h1>
-                <StatementList statements={this.state.statements} />
-            </div>
-        );
+        return <StatementList statements={this.state.statements} />;
     }
 
     private async downloadStatements() {

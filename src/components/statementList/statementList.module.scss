@@ -4,7 +4,7 @@ body {
     .noStatement {
         @include default-font;
         text-align: center;
-        line-height: 90vh;
+        line-height: 100vh;
         font-size: 32px;
     }
     @include mediumDevice() {
